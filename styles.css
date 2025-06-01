@@ -1,0 +1,230 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: lightblue;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Header */
+#mainHeader {
+  background: linear-gradient(to right, #004080, #0066cc);
+  color: white;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background-color: #004080;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: large;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+  background-color: rgba(0, 64, 128, 1);
+  color: white;
+  border: 2px solid gold;
+  margin: 10px 15vw;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Highlighted Text */
+.highlight {
+  font-weight: bold;
+  color: darkblue;
+  margin: 10px;
+}
+
+/* Gallery Section */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s;
+  border: 2px solid yellow;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.1);
+}
+
+#gallery table,
+#gallery td {
+  border: none;
+  padding: 0;
+}
+
+/* Forms & Feedback */
+form,
+#feedback {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: auto;
+  border-radius: 8px;
+  max-width: 500px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.Find {
+  width: 150px;
+  border: 2px solid red;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.Find:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Table Styling */
+table {
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Confirmation Message */
+.confirmMsg {
+  visibility: hidden;
+  font-weight: bold;
+  color: green;
+}
+
+/* News Section */
+.news-article {
+  column-count: 2;
+  column-gap: 30px;
+  margin: 15px;
+  padding: 5px;
+  column-rule: 1px solid red;
+}
+
+/* Video */
+video {
+  width: 50vw;
+  max-width: 700px;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Location */
+#location {
+  margin: 2%;
+  font-weight: bold;
+  color: #004080;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eventCard,
+  form {
+    width: 90%;
+    margin: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
