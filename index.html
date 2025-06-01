@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Event Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header id="mainHeader">
+    <h1>Local Community Event Portal</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <div id="welcomeBanner">Welcome, User! <span style="color: red; font-weight: bold;">Special Offer</span></div>
+      <p class="highlight">Get to know about the event!</p>
+    </section>
+
+    <!-- Event Gallery -->
+    <h2 class="Community">Community Event Gallery</h2>
+    <section id="gallery">
+      <table>
+        <tr>
+          <td><img src="Images/img1.jpeg" alt="Event 1" title="Event 1" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+          <td><img src="Images/img2.jpeg" alt="Event 2" title="Event 2" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+          <td><img src="Images/img3.jpeg" alt="Event 3" title="Event 3" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+        </tr>
+        <tr>
+          <td><img src="Images/img4.jpeg" alt="Event 4" title="Event 4" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+          <td><img src="Images/img5.jpeg" alt="Event 5" title="Event 5" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+          <td><img src="Images/img6.jpeg" alt="Event 6" title="Event 6" class="gallery-img" ondblclick="enlargeImage(this)" onmouseleave="resetImage(this)" /></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Registration Form -->
+    <h2 style="color: red;">Register for an Event</h2>
+    <section id="form">
+      <form id="eventForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name" required autofocus />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="john@gmail.com" required />
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" required onchange="savePreference(this)">
+          <option value="">Choose Event</option>
+          <option value="Music">Music</option>
+          <option value="Sports">Sports</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <textarea id="address" placeholder="Your address"></textarea>
+
+        <button type="button" onclick="confirmMsg(); register()">Register</button>
+        <button type="button" onclick="cancelRegistration()">Cancel Registration</button>
+
+        <output id="confirmationMsg" class="confirmMsg">DATA RECEIVED</output>
+      </form>
+    </section>
+
+    <!-- Feedback Section -->
+    <h2>Event Feedback</h2>
+    <section id="feedback">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Phone Number" onblur="validatePhone(this)" />
+
+      <label for="eventFee">Event:</label>
+      <select id="eventFee" onchange="showFee(this)">
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+      </select>
+
+      <button type="button" onclick="confirmSubmit()">Submit Feedback</button>
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" onkeyup="countChars(this)"></textarea>
+      <span id="charCount">0</span>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p>Join us for a local festival celebrating arts and culture!</p>
+      <button onclick="displayUpcomingEvents()">Show Events</button>
+      <table id="event-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Seats Available</th>
+          </tr>
+        </thead>
+        <tbody id="event-list"></tbody>
+      </table>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-article">
+      <h3>Community News</h3>
+      <p>There are lots of events going on in our community including workshops, music nights, and sports tournaments. Stay tuned!</p>
+    </section>
+
+    <!-- Video -->
+    <section id="video">
+      <video src="Videos/video.mp4" onclick="showMessage()" controls muted></video>
+    </section>
+
+    <!-- Map -->
+    <section id="map">
+      <h2>Find Nearby Events</h2>
+      <button onclick="findEvents()" class="Find">Find Nearby Events</button>
+      <p id="location"></p>
+    </section>
+  </main>
+
+  <!-- Preferences Button -->
+  <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@localevents.org</p>
+    <p>Phone: 123-456-7890</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Local Community Event Portal
+  </footer>
+</body>
+</html>
